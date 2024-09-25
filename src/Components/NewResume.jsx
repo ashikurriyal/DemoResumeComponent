@@ -1,88 +1,33 @@
-import { useState } from "react";
-import { FiEdit } from "react-icons/fi";
+import  { useState } from "react";
+import EditableSection from "./EditableSection";
 
 const NewResume = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [name, setName] = useState("Jon Snow");
-  const [designation, setDesignation] = useState("Front-End Developer");
+  const [nameData, setNameData] = useState({
+    name: "Jon Snow",
+    designation: "Front-End Developer",
+  });
 
-  const handleEditClick = () => {
-    setIsModalOpen(true);
+  // const [contactData, setContactData] = useState({
+  //   email: "jonsnow@example.com",
+  //   phone: "(+1) 234-567-890",
+  //   location: "Winterfell",
+  // });
+
+  const handleSaveNameData = (newData) => {
+    setNameData(newData);
   };
-
-  const handleSave = () => {
-    // Logic to save the name and designation could go here
-    setIsModalOpen(false);
-  };
-
   return (
     <div className="max-w-5xl mx-auto bg-white shadow-lg p-10 my-10 rounded-lg">
-      {/* Header Section */}
-      <div>
-        {/* Section with hover icon */}
-        <section
-          className="relative hover:border-4 hover:border-black hover:rounded-xl p-4"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Edit icon that shows only on hover */}
-          {isHovered && (
-            <FiEdit
-              onClick={handleEditClick}
-              className="absolute top-2 right-2 text-xl text-gray-800 cursor-pointer"
-            />
-          )}
+      <EditableSection
+        title={nameData.name}
+        content={nameData.designation}
+        fields={nameData}
+        onSave={handleSaveNameData}
+      />
 
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-800">{name}</h1>
-            <p className="text-xl text-gray-600">{designation}</p>
-          </div>
-        </section>
+      <EditableSection
 
-        {/* Modal */}
-        {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-              <h2 className="text-2xl font-bold mb-4">Edit Information</h2>
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Name</label>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-2">Designation</label>
-                <input
-                  type="text"
-                  value={designation}
-                  onChange={(e) => setDesignation(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-                />
-              </div>
-
-              {/* Modal buttons */}
-              <div className="flex justify-end space-x-4">
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
-                >
-                  Close
-                </button>
-                <button
-                  onClick={handleSave}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                >
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+      ></EditableSection>
 
       {/* Contact Info */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-8">
