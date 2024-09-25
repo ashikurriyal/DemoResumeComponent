@@ -32,6 +32,8 @@ const EditableSection = ({ title, content, fields, onSave }) => {
         <p className="text-xl text-gray-600">{content}</p>
       </div>
 
+      
+
       {isModalOpen && (
         <EditModal
           fields={fields}

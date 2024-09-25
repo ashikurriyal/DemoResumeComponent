@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import EditableSection from "./EditableSection";
 
 const NewResume = () => {
@@ -16,6 +16,9 @@ const NewResume = () => {
   const handleSaveNameData = (newData) => {
     setNameData(newData);
   };
+  // const handleSaveContactData = (newData) => {
+  //   setContactData(newData);
+  // };
   return (
     <div className="max-w-5xl mx-auto bg-white shadow-lg p-10 my-10 rounded-lg">
       <EditableSection
@@ -25,9 +28,12 @@ const NewResume = () => {
         onSave={handleSaveNameData}
       />
 
-      <EditableSection
-
-      ></EditableSection>
+      {/* <EditableSection
+        title="Contact Information"
+        content={`${contactData.phone}, ${contactData.email}, ${contactData.location}`}
+        fields={contactData}
+        onSave={handleSaveContactData}
+      /> */}
 
       {/* Contact Info */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-8">
