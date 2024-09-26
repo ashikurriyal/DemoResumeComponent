@@ -162,7 +162,10 @@ const BlogsSection = () => {
 
   return (
     <div>
-      <div className="flex items-center container mx-auto justify-end gap-2 text-green-500">
+        <div className="bg-green-50 p-10">
+            <h1 className="text-center text-5xl font-semibold text-green-500">Blogs Page</h1>
+        </div>
+      <div className="flex items-center container mx-auto justify-end gap-2 text-green-500 md:mt-4">
         <label className="text-lg font-medium">Sort by</label>
         <select
           value={sortBy}
