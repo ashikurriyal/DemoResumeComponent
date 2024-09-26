@@ -162,10 +162,10 @@ const BlogsSection = () => {
 
   return (
     <div>
-        <div className="bg-green-50 p-10">
+        <div className="bg-green-50 p-14">
             <h1 className="text-center text-5xl font-semibold text-green-500">Blogs Page</h1>
         </div>
-      <div className="flex items-center container mx-auto justify-end gap-2 text-green-500 md:mt-4">
+      <div className="flex items-center container mx-auto justify-end gap-2 text-green-500 md:mt-6">
         <label className="text-lg font-medium">Sort by</label>
         <select
           value={sortBy}
@@ -176,7 +176,7 @@ const BlogsSection = () => {
           <option value="oldest">Oldest</option>
         </select>
       </div>
-      <div className="container mx-auto grid grid-cols-4 gap-6 mt-2">
+      <div className="container mx-auto grid grid-cols-4 gap-6 mt-4">
         {/* Left Sidebar */}
         <div className="col-span-1 text-green-500 p-4 rounded-lg h-1/4">
           <h2 className="text-xl font-bold mb-4 text-center">Filters</h2>
