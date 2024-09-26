@@ -162,23 +162,30 @@ const BlogsSection = () => {
 
   return (
     <div>
-        <div className="bg-green-50 p-14">
-            <h1 className="text-center text-5xl font-semibold text-green-500">Blogs Page</h1>
-        </div>
-      <div className="flex items-center container mx-auto justify-end gap-2 text-green-500 md:mt-6">
+      {/* Header Section */}
+      <div className="bg-green-50 p-6 md:p-14">
+        <h1 className="text-center text-3xl md:text-5xl font-semibold text-green-500">
+          Blogs Page
+        </h1>
+      </div>
+
+      {/* Sort by Section */}
+      <div className="flex flex-col md:flex-row items-center container mx-auto justify-end gap-2 text-green-500 mt-4 md:mt-6">
         <label className="text-lg font-medium">Sort by</label>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="border rounded px-3 py-2"
+          className="border rounded px-3 py-2 mt-2 md:mt-0"
         >
           <option value="newest">Newest</option>
           <option value="oldest">Oldest</option>
         </select>
       </div>
-      <div className="container mx-auto grid grid-cols-4 gap-6 mt-4">
+
+      {/* Main Content Section */}
+      <div className="container mx-auto mt-4 grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Left Sidebar */}
-        <div className="col-span-1 text-green-500 p-4 rounded-lg h-1/4">
+        <div className="col-span-1 bg-gray-50 text-green-500 p-4 rounded-lg h-auto">
           <h2 className="text-xl font-bold mb-4 text-center">Filters</h2>
 
           {/* Experience Level Dropdown */}
@@ -196,7 +203,7 @@ const BlogsSection = () => {
               <div className="py-2">
                 <label className="flex items-center">
                   <input type="checkbox" className="mr-2" />
-                  Begineer
+                  Beginner
                 </label>
                 <label className="flex items-center mt-2">
                   <input type="checkbox" className="mr-2" />
@@ -213,6 +220,7 @@ const BlogsSection = () => {
               </div>
             )}
           </div>
+
           {/* Job Type Dropdown */}
           <div className="border-b mb-4">
             <div
@@ -232,6 +240,7 @@ const BlogsSection = () => {
                   <input type="checkbox" className="mr-2" />
                   Fixed-Price
                 </label>
+
                 {/* Price Range for Hourly */}
                 <div className="flex items-center mt-4">
                   <input
@@ -246,6 +255,7 @@ const BlogsSection = () => {
                     placeholder="Max"
                   />
                 </div>
+
                 {/* Price Range for Fixed Price */}
                 <div className="mt-4">
                   <label className="flex items-center">
@@ -275,7 +285,7 @@ const BlogsSection = () => {
         </div>
 
         {/* Blogs Section */}
-        <div className="col-span-3 grid grid-cols-1 gap-6">
+        <div className="col-span-1 lg:col-span-3 grid grid-cols-1 gap-4 md:gap-2">
           {sortedBlogs.map((blog, index) => (
             <BlogsCard
               key={index}
