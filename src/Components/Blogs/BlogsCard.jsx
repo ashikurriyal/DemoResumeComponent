@@ -1,6 +1,6 @@
 const BlogsCard = ({ title, shortDescription, tags, datePosted, experienceLevel, jobType, priceRange }) => {
     return (
-        <div className="border p-4 mb-4 rounded-lg shadow-lg">
+        <div className="border p-4 mb-4 rounded-lg shadow-lg hover:border-2 hover:border-green-500">
             <div className="flex justify-between items-center">
                 <h1 className="text-lg font-semibold">{title}</h1>
                 <p className="text-gray-500 text-sm">{datePosted}</p>
