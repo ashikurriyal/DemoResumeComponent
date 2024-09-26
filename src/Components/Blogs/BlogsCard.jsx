@@ -8,12 +8,13 @@ const BlogsCard = ({ title, shortDescription, tags, datePosted, experienceLevel,
             <p className="text-gray-700 mb-2">{shortDescription}</p>
             <div className="flex space-x-2 mb-2">
                 {tags.map((tag, index) => (
-                    <span key={index} className="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">{tag}</span>
+                    <span key={index} className="bg-green-50 text-xs px-3 py-2 text-green-500 rounded-full">{tag}</span>
                 ))}
             </div>
             <div className="flex justify-between items-center text-gray-500 text-sm">
+
                 <p>{experienceLevel} - {jobType}</p>
-                <p>{priceRange}</p>
+                <p className="text-green-500">{priceRange}</p>
             </div>
         </div>
     );
