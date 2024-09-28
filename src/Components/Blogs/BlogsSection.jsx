@@ -38,7 +38,7 @@ const BlogsSection = () => {
         "Seeking a full-stack developer to enhance the performance and scalability of our online retail platform.",
       tags: ["Node.js", "React", "MongoDB"],
       datePosted: "2023-09-22",
-      experienceLevel: "Advanced",
+      experienceLevel: "Expert",
       jobType: "Hourly",
       priceRange: "$25.00 - $50.00/hr",
     },
@@ -78,7 +78,7 @@ const BlogsSection = () => {
         "Implement and integrate third-party APIs for our healthcare platform, ensuring security and efficiency.",
       tags: ["Node.js", "Express", "API"],
       datePosted: "2023-09-18",
-      experienceLevel: "Advanced",
+      experienceLevel: "Expert",
       jobType: "Hourly",
       priceRange: "$40.00 - $80.00/hr",
     },
@@ -118,7 +118,7 @@ const BlogsSection = () => {
         "Looking for an experienced game developer to create a 2D multiplayer game using Unity or Unreal Engine.",
       tags: ["Unity", "Unreal Engine", "C#"],
       datePosted: "2023-09-14",
-      experienceLevel: "Advanced",
+      experienceLevel: "Expert",
       jobType: "Fixed-Price",
       priceRange: "$5K - $10K",
     },
@@ -138,7 +138,7 @@ const BlogsSection = () => {
         "Improve the performance and query optimization of our existing MySQL database for our SaaS product.",
       tags: ["MySQL", "Database", "Performance"],
       datePosted: "2023-09-12",
-      experienceLevel: "Advanced",
+      experienceLevel: "Expert",
       jobType: "Hourly",
       priceRange: "$40.00 - $90.00/hr",
     },
@@ -212,10 +212,6 @@ const BlogsSection = () => {
                 <label className="flex items-center mt-2">
                   <input type="checkbox" className="mr-2" />
                   Expert
-                </label>
-                <label className="flex items-center mt-2">
-                  <input type="checkbox" className="mr-2" />
-                  Advanced
                 </label>
               </div>
             )}
