@@ -1,7 +1,7 @@
 // import NewResume from "./Components/newResume";
-// import BlogsSection from "./Components/Blogs/BlogsSection";
+import BlogsSection from "./Components/Blogs/BlogsSection";
 
-import Resume12 from "./Components/templatesColllection/Resume12";
+// import Resume12 from "./Components/templatesColllection/Resume12";
 
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <>
       <div className="container mx-auto max-w-7xl">
         {/* <NewResume></NewResume> */}
-        {/* <BlogsSection></BlogsSection> */}
-        <Resume12></Resume12>
+        <BlogsSection></BlogsSection>
+        {/* <Resume12></Resume12> */}
       </div>
     </>
   );
