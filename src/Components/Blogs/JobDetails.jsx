@@ -149,7 +149,62 @@ const JobDetailsPage = () => {
               </p>
             </div>
           </div>
-          <div className="border-2 border-black row-span-2">02</div>
+
+          <div className=" rounded-lg row-span-2 p-4 border-l">
+            <div className="mb-4 text-gray-500">
+              <p>
+                You’ll need Connects to bid. They’re like credits that show
+                clients you’re serious.
+              </p>
+              <a href="#" className="text-green-600 underline">
+                Learn more
+              </a>
+            </div>
+
+            <button className="bg-green-500 text-white font-semibold py-2 px-4 rounded w-full mb-2">
+              Buy Connects to apply
+            </button>
+
+            <button className="border-2 border-green-500 text-green-500 font-semibold py-2 px-4 rounded w-full mb-4">
+              Save job
+            </button>
+
+            <div className="flex items-center mb-2">
+              <span className="text-green-500 font-semibold mr-2">
+                Flag as inappropriate
+              </span>
+            </div>
+
+            <div className="text-gray-700 mb-4">
+              <p>
+                Required Connects to submit a proposal:{" "}
+                <span className="font-bold">20</span>
+              </p>
+              <p>
+                Available Connects: <span className="font-bold">0</span>
+              </p>
+            </div>
+
+            <h4 className="text-lg font-semibold mb-2">About the client</h4>
+            <div className="flex items-center mb-2">
+              <span className="text-green-600 mr-2">✔️</span>
+              <span className="text-green-600">Payment method verified</span>
+            </div>
+
+            <div className="text-gray-700 mb-2">
+              <p className="mb-1">⭐⭐☆☆☆ 2.0</p>
+              <p className="text-sm">2.0 of 1 review</p>
+              <p className="text-sm">Spain</p>
+              <p className="text-sm">Madrid 11:02 PM</p>
+              <p className="text-sm">4 jobs posted</p>
+              <p className="text-sm">50% hire rate, 1 open job</p>
+              <p className="text-sm">$209 total spent</p>
+              <p className="text-sm">2 hires, 1 active</p>
+              <p className="text-sm">$10.00 /hr avg hourly rate paid</p>
+              <p className="text-sm">18 hours</p>
+            </div>
+          </div>
+
           <div className="border-2 border-green-500 rounded-lg col-span-2 shadow-lg  py-8">
             <div className="grid grid-cols-3 justify-items-center">
               <div className="flex items-center gap-3">
@@ -194,7 +249,7 @@ const JobDetailsPage = () => {
                 Client's recent history (2)
               </h2>
               <h3 className="text-md text-gray-600 mb-2">Jobs in progress</h3>
-              <div className="bg-gray-100 p-4 rounded-lg">
+              <div className="bg-green-50 p-4 rounded-lg">
                 <h4 className="text-lg font-medium mb-2">Test Render Shoes</h4>
                 <div className="flex items-center mb-2">
                   <span className="text-yellow-500 mr-2">⭐⭐⭐⭐✰</span>
@@ -205,7 +260,7 @@ const JobDetailsPage = () => {
                 </p>
                 <p className="text-sm text-gray-700">
                   To freelancer:{" "}
-                  <span className="text-yellow-500">Hameed M.</span>{" "}
+                  <span className="text-green-500">Hameed M.</span>{" "}
                   <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>{" "}
                   <span className="text-gray-500">4.3 Good Job.</span>
                 </p>
