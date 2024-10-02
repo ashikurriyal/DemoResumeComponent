@@ -1,30 +1,42 @@
 import { useEffect, useState } from "react";
 import BlogsCard from "./BlogsCard";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import BlogDetailsSidebar from "./BlogDetailsSidebar"; // Assuming the sidebar component exists
 
 const BlogsSection = () => {
-
-  const [blogs, setBlogs] = useState([])
+  const [blogs, setBlogs] = useState([]);
   const [sortBy, setSortBy] = useState("newest");
+  const [selectedBlog, setSelectedBlog] = useState(null); // Store the selected blog here
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // To control sidebar visibility
   const [experienceOpen, setExperienceOpen] = useState(false);
   const [jobTypeOpen, setJobTypeOpen] = useState(false);
+
   // Toggling the dropdowns
   const toggleExperience = () => setExperienceOpen(!experienceOpen);
   const toggleJobType = () => setJobTypeOpen(!jobTypeOpen);
 
   useEffect(() => {
-    fetch('blogs.JSON')
-    .then(res => res.json())
-    .then(data => setBlogs(data))
-  })
-
+    fetch("blogs.JSON")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
 
   const sortedBlogs = [...blogs].sort((a, b) => {
     return sortBy === "newest"
       ? new Date(b.datePosted) - new Date(a.datePosted)
       : new Date(a.datePosted) - new Date(b.datePosted);
   });
+
+  // Function to open the sidebar with the selected blog
+  const handleBlogClick = (blog) => {
+    setSelectedBlog(blog); // Set the clicked blog data
+    setIsSidebarOpen(true); // Open the sidebar
+  };
+
+  // Function to close the sidebar
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <div>
@@ -53,7 +65,6 @@ const BlogsSection = () => {
         {/* Left Sidebar */}
         <div className="col-span-1 bg-gray-50 text-green-500 p-4 rounded-lg h-auto">
           <h2 className="text-xl font-bold mb-4 text-center">Filters</h2>
-
           {/* Experience Level Dropdown */}
           <div className="border-b mb-4">
             <div
@@ -152,10 +163,16 @@ const BlogsSection = () => {
             <BlogsCard
               key={blog.id}
               blog={blog}
+              onClick={() => handleBlogClick(blog)} // Pass the click handler
             />
           ))}
         </div>
       </div>
+
+      {/* Blog Details Sidebar */}
+      {isSidebarOpen && selectedBlog && (
+        <BlogDetailsSidebar blog={selectedBlog} onClose={closeSidebar} />
+      )}
     </div>
   );
 };
