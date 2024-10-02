@@ -53,7 +53,7 @@ const JobDetailsPage = () => {
         </button>
 
         {/* Job Details */}
-        <div className="px-2 grid grid-cols-3 gap-2">
+        <div className="px-2 grid grid-cols-3 gap-2 md:mt-5">
           <div className=" col-span-2 space-y-3">
             <h2 className="text-2xl font-bold">
               Full-Stack Developer with Expertise in Next.js 14+,
@@ -67,7 +67,7 @@ const JobDetailsPage = () => {
               </div>
             </div>
             <hr />
-            <h4>
+            <h4 className="text-gray-500">
               We are looking for an experienced Full-Stack Developer to
               integrate two AI-driven applications into a unified SaaS platform
               using MakerKit or ShipFast. You’ll need strong experience with
@@ -80,7 +80,7 @@ const JobDetailsPage = () => {
               <p>
                 <strong>Project Overview:</strong>
               </p>
-              <ul className="list-disc ml-6">
+              <ul className="list-disc ml-6 text-gray-500">
                 <li>AI Search Engine (Next.js, Redis, Tailwind)</li>
                 <li>AI Chatbot (Next.js, Vercel KV DB, AI SDKs)</li>
               </ul>
@@ -91,7 +91,7 @@ const JobDetailsPage = () => {
               <p>
                 <strong>Goal:</strong>
               </p>
-              <p>
+              <p className="text-gray-500">
                 Integrate these applications into a single SaaS platform, using
                 MakerKit or ShipFast to implement multi-tenancy, subscription
                 management, and unified authentication with PostgreSQL for
@@ -104,7 +104,7 @@ const JobDetailsPage = () => {
               <p>
                 <strong>Responsibilities:</strong>
               </p>
-              <ul className="list-disc ml-6">
+              <ul className="list-disc ml-6 text-gray-500">
                 <li>Integrate the two apps into MakerKit or ShipFast.</li>
                 <li>
                   Refactor code and unify databases and authentication systems.
@@ -122,7 +122,7 @@ const JobDetailsPage = () => {
               <p>
                 <strong>Requirements:</strong>
               </p>
-              <ul className="list-disc ml-6">
+              <ul className="list-disc ml-6 text-gray-500">
                 <li>Expertise in Next.js 14+ and React.</li>
                 <li>Experience with MakerKit or ShipFast.</li>
                 <li>
@@ -142,16 +142,18 @@ const JobDetailsPage = () => {
               <p>
                 <strong>Project Details:</strong>
               </p>
-              <p>Timeline: 4 weeks</p>
-              <p>
-                Collaboration: Work alongside other developers and a project
-                manager.
-              </p>
+              <div className="text-gray-500">
+                <p>Timeline: 4 weeks</p>
+                <p>
+                  Collaboration: Work alongside other developers and a project
+                  manager.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className=" rounded-lg row-span-2 p-4 border-l">
-            <div className="mb-4 text-gray-500">
+            <div className="mb-4 text-gray-500 shadow-lg rounded-lg p-3 bg-green-50">
               <p>
                 You’ll need Connects to bid. They’re like credits that show
                 clients you’re serious.
@@ -185,23 +187,25 @@ const JobDetailsPage = () => {
               </p>
             </div>
 
-            <h4 className="text-lg font-semibold mb-2">About the client</h4>
-            <div className="flex items-center mb-2">
-              <span className="text-green-600 mr-2">✔️</span>
-              <span className="text-green-600">Payment method verified</span>
-            </div>
+            <div className="py-2 px-1">
+              <h4 className="text-lg font-semibold mb-2">About the client</h4>
+              <div className="flex items-center mb-2">
+                <span className="text-green-600 mr-2">✔️</span>
+                <span className="text-green-600">Payment method verified</span>
+              </div>
 
-            <div className="text-gray-700 mb-2">
-              <p className="mb-1">⭐⭐☆☆☆ 2.0</p>
-              <p className="text-sm">2.0 of 1 review</p>
-              <p className="text-sm">Spain</p>
-              <p className="text-sm">Madrid 11:02 PM</p>
-              <p className="text-sm">4 jobs posted</p>
-              <p className="text-sm">50% hire rate, 1 open job</p>
-              <p className="text-sm">$209 total spent</p>
-              <p className="text-sm">2 hires, 1 active</p>
-              <p className="text-sm">$10.00 /hr avg hourly rate paid</p>
-              <p className="text-sm">18 hours</p>
+              <div className="text-gray-700 mb-2">
+                <p className="mb-1">⭐⭐☆☆☆ 2.0</p>
+                <p className="text-sm">2.0 of 1 review</p>
+                <p className="text-sm">Spain</p>
+                <p className="text-sm">Madrid 11:02 PM</p>
+                <p className="text-sm">4 jobs posted</p>
+                <p className="text-sm">50% hire rate, 1 open job</p>
+                <p className="text-sm">$209 total spent</p>
+                <p className="text-sm">2 hires, 1 active</p>
+                <p className="text-sm">$10.00 /hr avg hourly rate paid</p>
+                <p className="text-sm">18 hours</p>
+              </div>
             </div>
           </div>
 
@@ -211,21 +215,21 @@ const JobDetailsPage = () => {
                 <TbReportMoney className="text-5xl text-green-500" />
                 <div>
                   <p>$10.00-$35.00</p>
-                  <p>Hourly Rate</p>
+                  <p className="text-gray-500 text-sm">Hourly Rate</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <SlCalender className="text-5xl text-green-500" />
                 <div>
                   <p>1 to 3 months</p>
-                  <p>Project Length</p>
+                  <p className="text-gray-500 text-sm">Project Length</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <PiBrainFill className="text-5xl text-green-500" />
                 <div>
                   <p>Intermediate</p>
-                  <p>Difficulty Level</p>
+                  <p className="text-gray-500 text-sm">Difficulty Level</p>
                 </div>
               </div>
             </div>
