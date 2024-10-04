@@ -43,7 +43,7 @@ const BlogsSection = () => {
       {/* Header Section */}
       <div className="bg-green-50 p-6 md:p-14">
         <h1 className="text-center text-3xl md:text-5xl font-semibold text-green-500">
-          Blogs Page
+          Job Posting Page
         </h1>
       </div>
 
