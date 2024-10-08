@@ -14,7 +14,7 @@ const JobsSection = () => {
   const toggleJobType = () => setJobTypeOpen(!jobTypeOpen);
 
   useEffect(() => {
-    fetch("blogs.JSON")
+    fetch("jobs.JSON")
       .then((res) => res.json())
       .then((data) => setJobs(data));
   }, []);
