@@ -1,35 +1,26 @@
-/* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { PiBrainFill, PiMapPinAreaFill } from "react-icons/pi";
 import { SlCalender } from "react-icons/sl";
 import { TbReportMoney } from "react-icons/tb";
 import hiringImage from "../../../public/images/HiringConfirmed.png";
 
-const JobDetailsPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const JobDetails = ({ toggleDetails, closeDetails, isOpen, blog }) => {
+  if (!blog) {
+    return null; // Early return if blog is undefined
+  }
 
-  const toggleDetails = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeDetails = (e) => {
-    if (e.target.id === "overlay") {
-      setIsOpen(false);
-    }
-  };
+  const {
+    title,
+    shortDescription,
+    datePosted,
+    experienceLevel,
+    jobType,
+    priceRange,
+    tags,
+  } = blog;
 
   return (
-    <div className="relative">
-      {/* Button to open details */}
-      <button
-        onClick={toggleDetails}
-        className="bg-blue-500 text-white p-3 rounded-lg"
-      >
-        Show Job Details
-      </button>
-
-      {/* Overlay for the sidebar */}
+    <>
       {isOpen && (
         <div
           id="overlay"
@@ -38,13 +29,11 @@ const JobDetailsPage = () => {
         ></div>
       )}
 
-      {/* Job details sidebar */}
       <div
         className={`fixed top-0 right-0 z-40 w-64 p-4 overflow-y-auto transition-transform shadow-xl  ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out bg-white shadow-lg z-40 max-w-5xl md:w-full h-full md:p-4`}
       >
-        {/* Back button */}
         <button
           onClick={toggleDetails}
           className="text-gray-500 hover:text-gray-700 text-3xl"
@@ -52,12 +41,12 @@ const JobDetailsPage = () => {
           <IoArrowBackOutline />
         </button>
 
-        {/* Job Details */}
         <div className="px-2 grid grid-cols-3 gap-2 md:mt-5">
           <div className=" col-span-2 space-y-3">
             <h2 className="text-2xl font-bold">
-              Full-Stack Developer with Expertise in Next.js 14+,
-              MakerKit/ShipFast, and AI Integration
+              {/* Full-Stack Developer with Expertise in Next.js 14+,
+              MakerKit/ShipFast, and AI Integration */}
+              {title}
             </h2>
             <div className="flex gap-10">
               <p>Posted Date</p>
@@ -250,7 +239,7 @@ const JobDetailsPage = () => {
           <div className="border-2 rounded-lg border-green-500 col-span-3">
             <div className="p-4 md:p-6 bg-white shadow-lg rounded-lg">
               <h2 className="text-xl font-semibold mb-4">
-                Client's recent history (2)
+                Client &apos s recent history (2)
               </h2>
               <h3 className="text-md text-gray-600 mb-2">Jobs in progress</h3>
               <div className="bg-green-50 p-4 rounded-lg">
@@ -278,8 +267,8 @@ const JobDetailsPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default JobDetailsPage;
+export default JobDetails;

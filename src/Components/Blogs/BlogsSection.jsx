@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import BlogsCard from "./BlogsCard";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import BlogDetailsSidebar from "./BlogDetailsSidebar"; // Assuming the sidebar component exists
+import { useNavigate } from "react-router-dom";
+// import BlogDetailsSidebar from "./BlogDetailsSidebar"; // Assuming the sidebar component exists
+// import { Link } from "react-router-dom";
 
 const BlogsSection = () => {
   const [blogs, setBlogs] = useState([]);
   const [sortBy, setSortBy] = useState("newest");
-  const [selectedBlog, setSelectedBlog] = useState(null); // Store the selected blog here
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // To control sidebar visibility
+  // const [selectedBlog, setSelectedBlog] = useState(null); // Store the selected blog here
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(false); // To control sidebar visibility
   const [experienceOpen, setExperienceOpen] = useState(false);
   const [jobTypeOpen, setJobTypeOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Toggling the dropdowns
   const toggleExperience = () => setExperienceOpen(!experienceOpen);
@@ -29,14 +32,15 @@ const BlogsSection = () => {
 
   // Function to open the sidebar with the selected blog
   const handleBlogClick = (blog) => {
-    setSelectedBlog(blog); // Set the clicked blog data
-    setIsSidebarOpen(true); // Open the sidebar
+    // setSelectedBlog(blog); // Set the clicked blog data
+    // setIsSidebarOpen(true); // Open the sidebar
+    navigate(`/blog/${blog.blogId}`)
   };
 
   // Function to close the sidebar
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
+  // const closeSidebar = () => {
+  //   setIsSidebarOpen(false);
+  // };
 
   return (
     <div>
@@ -160,19 +164,14 @@ const BlogsSection = () => {
         {/* Blogs Section */}
         <div className="col-span-1 lg:col-span-3 grid grid-cols-1 gap-4 md:gap-2">
           {sortedBlogs.map((blog) => (
-            <BlogsCard
-              key={blog.id}
-              blog={blog}
-              onClick={() => handleBlogClick(blog)} // Pass the click handler
-            />
+              <BlogsCard
+                key={blog.id}
+                blog={blog}
+                onClick={() => handleBlogClick(blog)} // Pass the click handler
+              />
           ))}
         </div>
       </div>
-
-      {/* Blog Details Sidebar */}
-      {isSidebarOpen && selectedBlog && (
-        <BlogDetailsSidebar blog={selectedBlog} onClose={closeSidebar} />
-      )}
     </div>
   );
 };

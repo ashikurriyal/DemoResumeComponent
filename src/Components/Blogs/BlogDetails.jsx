@@ -1,4 +1,3 @@
-
 import { useLoaderData } from "react-router-dom";
 
 const BlogDetails = () => {
@@ -77,3 +76,6 @@ const BlogDetails = () => {
 };
 
 export default BlogDetails;
+
+
+ 
