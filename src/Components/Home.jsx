@@ -1,5 +1,5 @@
 import BlogsSection from "./Blogs/BlogsSection";
-// import JobDetails from "./Blogs/JobDetails";
+import JobDetails from "./Blogs/JobDetails";
 
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <div className="lg:mx-32 mx-6 space-y-20">
                 <BlogsSection></BlogsSection>
-                {/* <JobDetails></JobDetails> */}
+                <JobDetails></JobDetails>
             </div>
         </div>
     );
