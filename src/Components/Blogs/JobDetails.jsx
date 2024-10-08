@@ -11,12 +11,12 @@ const JobDetails = ({ toggleDetails, closeDetails, isOpen, blog }) => {
 
   const {
     title,
-    shortDescription,
-    datePosted,
-    experienceLevel,
-    jobType,
-    priceRange,
-    tags,
+    // shortDescription,
+    // datePosted,
+    // experienceLevel,
+    // jobType,
+    // priceRange,
+    // tags,
   } = blog;
 
   return (
