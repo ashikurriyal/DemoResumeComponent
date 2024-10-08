@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
-import BlogsCard from "./BlogsCard";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
-// import BlogDetailsSidebar from "./BlogDetailsSidebar"; // Assuming the sidebar component exists
-// import { Link } from "react-router-dom";
+import JobsCard from "./JobsCard";
 
-const BlogsSection = () => {
-  const [blogs, setBlogs] = useState([]);
+const JobsSection = () => {
+  const [jobs, setJobs] = useState([]);
   const [sortBy, setSortBy] = useState("newest");
-  // const [selectedBlog, setSelectedBlog] = useState(null); // Store the selected blog here
-  // const [isSidebarOpen, setIsSidebarOpen] = useState(false); // To control sidebar visibility
   const [experienceOpen, setExperienceOpen] = useState(false);
   const [jobTypeOpen, setJobTypeOpen] = useState(false);
-  const navigate = useNavigate();
+  
 
   // Toggling the dropdowns
   const toggleExperience = () => setExperienceOpen(!experienceOpen);
@@ -21,26 +16,19 @@ const BlogsSection = () => {
   useEffect(() => {
     fetch("blogs.JSON")
       .then((res) => res.json())
-      .then((data) => setBlogs(data));
+      .then((data) => setJobs(data));
   }, []);
 
-  const sortedBlogs = [...blogs].sort((a, b) => {
+  const sortedJobs = [...jobs].sort((a, b) => {
     return sortBy === "newest"
       ? new Date(b.datePosted) - new Date(a.datePosted)
       : new Date(a.datePosted) - new Date(b.datePosted);
   });
 
   // Function to open the sidebar with the selected blog
-  const handleBlogClick = (blog) => {
-    // setSelectedBlog(blog); // Set the clicked blog data
-    // setIsSidebarOpen(true); // Open the sidebar
-    navigate(`/blog/${blog.blogId}`)
+  const handleBlogClick = () => {
+    
   };
-
-  // Function to close the sidebar
-  // const closeSidebar = () => {
-  //   setIsSidebarOpen(false);
-  // };
 
   return (
     <div>
@@ -161,13 +149,13 @@ const BlogsSection = () => {
           </div>
         </div>
 
-        {/* Blogs Section */}
+        {/* Jobs Section */}
         <div className="col-span-1 lg:col-span-3 grid grid-cols-1 gap-4 md:gap-2">
-          {sortedBlogs.map((blog) => (
-              <BlogsCard
-                key={blog.id}
-                blog={blog}
-                onClick={() => handleBlogClick(blog)} // Pass the click handler
+          {sortedJobs.map((job) => (
+              <JobsCard
+                key={job.id}
+                job={job}
+                onClick={() => handleBlogClick(job)} // Pass the click handler
               />
           ))}
         </div>
@@ -176,4 +164,4 @@ const BlogsSection = () => {
   );
 };
 
-export default BlogsSection;
+export default JobsSection;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import JobDetails from "./JobDetails";
 
-const BlogsCard = ({ blog }) => {
+const JobsCard = ({ job }) => {
   const {
     title,
     shortDescription,
@@ -10,23 +10,23 @@ const BlogsCard = ({ blog }) => {
     experienceLevel,
     jobType,
     priceRange,
-  } = blog;
+  } = job;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedBlog, setSelectedBlog] = useState(null);
+  const [selectedJob, setSelectedJob] = useState(null);
 
   const toggleDetails = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
-      setSelectedBlog(blog); // Pass the correct blog data here when opening the details
+      setSelectedJob(job); // Pass the correct blog data here when opening the details
     } else {
-      setSelectedBlog(null); // Clear the blog data when closing the details
+      setSelectedJob(null); // Clear the blog data when closing the details
     }
   };
 
   const closeDetails = () => {
     setIsOpen(false);
-    setSelectedBlog(null);
+    setSelectedJob(null);
   };
 
   return (
@@ -63,16 +63,16 @@ const BlogsCard = ({ blog }) => {
         </div>
       </div>
 
-      {isOpen && selectedBlog && (
+      {isOpen && selectedJob && (
         <JobDetails
           toggleDetails={toggleDetails}
           closeDetails={closeDetails}
           isOpen={isOpen}
-          blog={selectedBlog}
+          job={selectedJob}
         />
       )}
     </>
   );
 };
 
-export default BlogsCard;
+export default JobsCard;

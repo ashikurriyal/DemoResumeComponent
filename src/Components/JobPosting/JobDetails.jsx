@@ -4,8 +4,8 @@ import { SlCalender } from "react-icons/sl";
 import { TbReportMoney } from "react-icons/tb";
 import hiringImage from "../../../public/images/HiringConfirmed.png";
 
-const JobDetails = ({ toggleDetails, closeDetails, isOpen, blog }) => {
-  if (!blog) {
+const JobDetails = ({ toggleDetails, closeDetails, isOpen, job }) => {
+  if (!job) {
     return null; // Early return if blog is undefined
   }
 
@@ -17,7 +17,7 @@ const JobDetails = ({ toggleDetails, closeDetails, isOpen, blog }) => {
     // jobType,
     // priceRange,
     // tags,
-  } = blog;
+  } = job;
 
   return (
     <>

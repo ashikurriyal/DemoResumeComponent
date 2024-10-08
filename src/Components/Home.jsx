@@ -1,13 +1,12 @@
-import BlogsSection from "./Blogs/BlogsSection";
-import JobDetails from "./Blogs/JobDetails";
+import JobsSection from "./JobPosting/JobsSection";
+
 
 
 const Home = () => {
     return (
         <div>
             <div className="lg:mx-32 mx-6 space-y-20">
-                <BlogsSection></BlogsSection>
-                <JobDetails></JobDetails>
+                <JobsSection></JobsSection>
             </div>
         </div>
     );
