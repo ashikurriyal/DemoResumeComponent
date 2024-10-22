@@ -9,6 +9,7 @@ const Home = () => {
                 {/* <JobsSection></JobsSection> */}
                 {/* <h1>New</h1> */}
                 {/* <h1>New</h1> */}
+                <h1>New</h1>
             </div>
         </div>
     );
