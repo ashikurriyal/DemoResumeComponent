@@ -11,6 +11,7 @@ const Home = () => {
                 {/* <JobsSection></JobsSection> */}
                 {/* <Section></Section> */}
                 {/* new */}
+                {/* new */}
             </div>
         </div>
     );
