@@ -12,6 +12,7 @@ const Home = () => {
                 {/* <Section></Section> */}
                 {/* new */}
                 {/* new */}
+                {/* new */}
             </div>
         </div>
     );
